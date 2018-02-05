@@ -1,0 +1,56 @@
+.homeComponent {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../assets/luigi-colonna-351099.jpg');
+    background-size: cover;
+}
+
+.logInButton, .logOutButton {
+    color: #DDDDDD;
+    font-weight: 300;
+    text-align: center;
+}
+
+.logInButton {
+    font-size: 1.5rem;
+}
+
+.logInButton:link, 
+.logInButton:visited, 
+.logInButton:hover, 
+.logInButton:active,
+.logOutButton:link, 
+.logOutButton:visited, 
+.logOutButton:hover, 
+.logOutButton:active,
+.enterRefuelLink:link, 
+.enterRefuelLink:visited, 
+.enterRefuelLink:hover, 
+.enterRefuelLink:active {
+    text-decoration: none;
+}
+
+.loggedIn {
+    display: flex;
+    flex-direction: column;
+}
+
+.greeting {
+    color: #DDDDDD;
+    text-align: center;
+    /* font-weight: 300; */
+}
+
+.enterRefuelLink {
+    color: #008AC9;
+    font-size: 1.3rem;
+    margin-bottom: 80px;
+    margin-top: 20px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    border: 1px solid #008AC9;
+    background: rgba(0,0,0,0.7)
+}

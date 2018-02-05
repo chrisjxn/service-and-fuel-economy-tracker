@@ -10,8 +10,8 @@ const controller = require('./controllers/controller');
 
 const app = express();
 
-app.use(bodyParser.json());
 app.use(express.static(`${__dirname}/../build`));
+app.use(bodyParser.json());
 app.use(session({
     secret: process.env.SECRET,
     resave: false,
@@ -63,7 +63,7 @@ passport.deserializeUser(function (id, done) {
 
 app.get('/auth', passport.authenticate('auth0'));
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/add-refuel',
+    successRedirect: 'http://localhost:3000/',
     failureRedirect: '/auth'
 }))
 app.get('/auth/me', (req, res) => {
@@ -79,6 +79,7 @@ app.get('/auth/logout', (req, res) => {
 })
 
 // endpoints
+app.post('/api/refuels', controller.addRefuel);
 
 
 const PORT = 3030;

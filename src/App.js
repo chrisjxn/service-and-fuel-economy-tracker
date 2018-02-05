@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Login from './components/login/Login';
+import Home from './components/home/Home';
 import AddRefuel from './components/addRefuel/AddRefuel';
 
 class App extends Component {
@@ -9,7 +9,7 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Switch>
-            <Route path='/' component={Login} exact />
+            <Route path='/' component={Home} exact />
             <Route path='/add-refuel' component={AddRefuel} />
           </Switch>
         </div>
