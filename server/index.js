@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const path = require('path'); // to use BrowserRouter
 const session = require('express-session');
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
@@ -63,7 +64,7 @@ passport.deserializeUser(function (id, done) {
 
 app.get('/auth', passport.authenticate('auth0'));
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/',
+    successRedirect: process.env.REACT_APP_BASEURL, // to host with authentication
     failureRedirect: '/auth'
 }))
 app.get('/auth/me', (req, res) => {
@@ -75,13 +76,16 @@ app.get('/auth/me', (req, res) => {
 })
 app.get('/auth/logout', (req, res) => {
     req.logOut();
-    res.redirect(`https://${process.env.AUTH_DOMAIN}/v2/logout?returnTo=http%3A%2F%2Flocalhost:3000`);
+    res.redirect(`https://${process.env.AUTH_DOMAIN}/v2/logout?returnTo=${process.env.REACT_APP_BASEURL}`); // to host with authentication
 })
 
 // endpoints
 app.post('/api/refuels', controller.addRefuel);
 app.get('/api/vehicles/:userId', controller.getVehicles);
+app.get('/*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+  }) // fallback endpoint - sends predictable response to any invalid request - also for using BrowserRouter in hosting (BrowserRouter won't work without a fallback)
 
 
-const PORT = 3030;
+const PORT = 8030; // use port beginning in 80 for NGINX (did find and replace all)
 app.listen(PORT, console.log(`Server listening on port ${PORT}`));
