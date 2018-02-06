@@ -120,9 +120,12 @@ class AddRefuel extends Component {
     }
 }
 
+
+// not sure about below - what is needed and what is not. feels like I might have stuff I don't need...
+
 function mapStateToProps(state) {
     return {
-        user: state.user
+        user: state.user,
     }
 }
 

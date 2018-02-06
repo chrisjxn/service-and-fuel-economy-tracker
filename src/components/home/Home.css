@@ -18,6 +18,16 @@
     font-size: 1.5rem;
 }
 
+.logOutButton {
+    font-size: 0.9rem;
+    margin-top: 60px;
+    color: rgba(0,0,0,0.7);
+    border-radius: 4px;
+    padding: 6px 10px;
+    border: 1px solid #008AC9;
+    background: #008AC9;
+}
+
 .logInButton:link, 
 .logInButton:visited, 
 .logInButton:hover, 
@@ -29,27 +39,43 @@
 .enterRefuelLink:link, 
 .enterRefuelLink:visited, 
 .enterRefuelLink:hover, 
-.enterRefuelLink:active {
+.enterRefuelLink:active,
+.secondaryLinks:link, 
+.secondaryLinks:visited, 
+.secondaryLinks:hover, 
+.secondaryLinks:active {
     text-decoration: none;
 }
 
 .loggedIn {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .greeting {
     color: #DDDDDD;
+    font-size: 1.5rem;
     text-align: center;
+    font-weight: 300;
 }
 
 .enterRefuelLink {
     color: #008AC9;
-    font-size: 1.3rem;
-    margin-bottom: 80px;
-    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+    margin-top: 40px;
     border-radius: 4px;
     padding: 10px 20px;
     border: 1px solid #008AC9;
     background: rgba(0,0,0,0.7)
+}
+
+.secondaryLinks {
+    color: #DDDDDD;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
 }

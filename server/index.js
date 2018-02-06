@@ -80,6 +80,7 @@ app.get('/auth/logout', (req, res) => {
 
 // endpoints
 app.post('/api/refuels', controller.addRefuel);
+app.get('/api/vehicles/:userId', controller.getVehicles);
 
 
 const PORT = 3030;

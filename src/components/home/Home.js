@@ -20,8 +20,10 @@ class Home extends Component {
                     <div className="loggedIn">
                         <div className="greeting">
                             Hi, {this.props.user.first_name}!
-                        </div>
+                            </div>
                         <Link className="enterRefuelLink" to='/add-refuel'>Enter refuel</Link>
+                        <Link className="secondaryLinks" to='/'>Manage profile</Link>
+                        <Link className="secondaryLinks" to='/'>View data</Link>
                         <a className="logOutButton" href={process.env.REACT_APP_LOGOUT}>Logout</a>
                     </div>
                 }
@@ -30,9 +32,12 @@ class Home extends Component {
     }
 }
 
+
+// not sure about below - what is needed and what is not. feels like I might have stuff I don't need...
+
 function mapStateToProps(state) {
     return {
-        user: state.user
+        user: state.user,
     }
 }
 
