@@ -76,7 +76,7 @@ app.get('/auth/me', (req, res) => {
 })
 app.get('/auth/logout', (req, res) => {
     req.logOut();
-    res.redirect(`https://${process.env.AUTH_DOMAIN}/v2/logout?returnTo=${process.env.REACT_APP_BASEURL}`); // to host with authentication
+    res.redirect(`https://${process.env.AUTH_DOMAIN}/v2/logout?returnTo=${process.env.AUTH_LOGOUT_REDIRECT}`); // to host with authentication
 })
 
 // endpoints
