@@ -82,9 +82,9 @@ app.get('/auth/logout', (req, res) => {
 // endpoints
 app.post('/api/refuels', controller.addRefuel);
 app.get('/api/vehicles/:userId', controller.getVehicles);
-app.get('*', (req, res)=>{
+app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../build/index.html'));
-  }) // fallback endpoint - sends predictable response to any invalid request - also for using BrowserRouter in hosting (BrowserRouter won't work without a fallback)
+}) // fallback endpoint - sends predictable response to any invalid request - also for using BrowserRouter in hosting (BrowserRouter won't work without a fallback)
 
 
 const PORT = 8030; // use port beginning in 80 for NGINX (did find and replace all)
